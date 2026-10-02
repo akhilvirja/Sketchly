@@ -6,6 +6,6 @@ const router = express.Router()
 
 router.use(protect)
 
-router.get("/", getMessagesByRoomId)
+router.get("/:roomId", getMessagesByRoomId)
 
 export default router

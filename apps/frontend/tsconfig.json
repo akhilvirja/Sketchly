@@ -6,7 +6,7 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
   },
   "include": [
     "**/*.ts",

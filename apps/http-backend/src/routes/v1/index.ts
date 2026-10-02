@@ -1,7 +1,7 @@
 import express from "express"
 import authRouter from "./auth/auth.routes.js"
 import roomRouter from "./room/chats.routes.js"
-import chatsRouter from "./room/chats.routes.js"
+import chatsRouter from "./chats/room.routes.js"
 
 const router = express.Router()
 

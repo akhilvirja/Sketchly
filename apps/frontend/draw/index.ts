@@ -1,12 +1,38 @@
-export function initDraw(canvas: HTMLCanvasElement){
+import { axiosInstance } from "../services";
+
+type Shape = {
+    type: "rect";
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+} | {
+    type: "circle",
+    centerX: number;
+    centerY: number;
+    radius: number;
+}
+
+export async function initDraw(canvas: HTMLCanvasElement, roomId: string, socket: WebSocket){
     const ctx = canvas.getContext("2d")
+
+    let existingShapes: Shape[] = await getExistingShapes(roomId);
 
     if(!ctx){
         return
     }
 
-    ctx.fillStyle = "rgba(0, 0, 0)"
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    socket.onmessage = (event) =>{
+        const data = JSON.parse(event.data)
+
+        if(data.type == "chat"){
+            const parsedShape = JSON.parse(data.message)
+            existingShapes.push(parsedShape.shape)
+            clearCanvas(existingShapes, canvas, ctx)
+        }
+    }
+
+    clearCanvas(existingShapes, canvas, ctx)
 
     let clicked = false;
     let startX = 0;
@@ -20,19 +46,63 @@ export function initDraw(canvas: HTMLCanvasElement){
 
     canvas.addEventListener("mouseup", (e) =>{
         clicked = false
-        console.log(e.clientX)
-        console.log(e.clientY)
+        const width = e.clientX - startX;
+        const height = e.clientY - startY
+
+        const shape: Shape = {
+            type: "rect",
+            x: startX,
+            y: startY,
+            width,
+            height,
+        }
+
+        existingShapes.push(shape)
+
+        socket.send(JSON.stringify({
+            type: "chat",
+            message: JSON.stringify({shape}),
+            roomId,
+        }))
     })
 
     canvas.addEventListener("mousemove", (e) =>{
         if(clicked){
             const width = e.clientX - startX
             const height = e.clientY - startY
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.fillStyle = "rgba(0, 0, 0)"
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            clearCanvas(existingShapes, canvas, ctx)
             ctx.strokeStyle = "rgba(255, 255, 255)"
             ctx.strokeRect(startX, startY, width, height)
         }
     })
 }
+
+function clearCanvas(existingShapes : Shape[],canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D){
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.fillStyle = "rgba(0, 0, 0)"
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    existingShapes.map((shape) => {
+        if(shape.type === "rect"){
+            ctx.strokeStyle = "rgba(255, 255, 255)"
+            ctx.strokeRect(shape.x, shape.y, shape.width, shape.height)
+        }
+    })
+}
+
+async function getExistingShapes(roomId: string) {
+    try {
+        const res = await axiosInstance.get(`/chats/${roomId}`)
+        const messages = res.data?.data?.messages || []
+
+        const shapes = messages.map((x: {message: string}) => {
+            const messageData = JSON.parse(x.message)
+            return messageData.shape
+        }) 
+
+        return shapes
+    } catch (error) {
+        console.error("Failed to fetch existing shapes:", error)
+        return []
+    }
+}
