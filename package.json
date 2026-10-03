@@ -25,5 +25,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "lucide-react": "^1.51.0"
+  }
 }

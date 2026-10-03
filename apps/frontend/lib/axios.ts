@@ -38,9 +38,7 @@ export const removeToken = (): void => {
  */
 export const getBaseUrl = (version: ApiVersion = "v1"): string => {
   const backendUrl =
-    process.env.NEXT_PUBLIC_BACKEND_URL ||
-    process.env.BACKEND_URL ||
-    "http://localhost:3001";
+    process.env.NEXT_PUBLIC_BACKEND_URL
   return `${backendUrl}/api/${version}`;
 };
 
