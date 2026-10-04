@@ -7,11 +7,17 @@ type Shape = {
     width: number;
     height: number;
 } | {
-    type: "circle",
+    type: "circle";
     centerX: number;
     centerY: number;
     radius: number;
-}
+} | {
+    type: "line";
+    startX: number;
+    startY: number;
+    endX: number;
+    endY: number;
+};
 
 export async function initDraw(canvas: HTMLCanvasElement, roomId: string, socket: WebSocket){
     const ctx = canvas.getContext("2d")
@@ -86,6 +92,17 @@ function clearCanvas(existingShapes : Shape[],canvas: HTMLCanvasElement, ctx: Ca
         if(shape.type === "rect"){
             ctx.strokeStyle = "rgba(255, 255, 255)"
             ctx.strokeRect(shape.x, shape.y, shape.width, shape.height)
+        } else if (shape.type === "circle") {
+            ctx.beginPath();
+            ctx.arc(shape.centerX, shape.centerY, Math.abs(shape.radius), 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+        } else if (shape.type === "line") {
+            ctx.beginPath();
+            ctx.moveTo(shape.startX, shape.startY);
+            ctx.lineTo(shape.endX, shape.endY);
+            ctx.stroke();
+            ctx.closePath();
         }
     })
 }

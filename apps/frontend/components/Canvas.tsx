@@ -1,11 +1,10 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { initDraw } from "../draw"
 import { Game } from "../draw/Game";
 import Topbar from "./TopBar";
 
-export type Tool = "circle" | "rect" | "pencil";
+export type Tool = "circle" | "rect" | "line";
 
 export default function Canvas({ roomId, socket}: {
     roomId: string,

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Circle, Pencil, RectangleHorizontalIcon, ArrowLeft } from "lucide-react";
+import { Circle, Minus, RectangleHorizontalIcon, ArrowLeft } from "lucide-react";
 import { Tool } from "./Canvas";
 import IconButton from "./IconButton";
 
@@ -29,9 +29,9 @@ export default function Topbar({
 
       <div className="flex gap-1 border border-zinc-800 bg-zinc-950 p-1 rounded-md">
         <IconButton
-          onClick={() => setSelectedTool("pencil")}
-          activated={selectedTool === "pencil"}
-          icon={<Pencil size={18} />}
+          onClick={() => setSelectedTool("line")}
+          activated={selectedTool === "line"}
+          icon={<Minus size={18} />}
         />
         <IconButton
           onClick={() => setSelectedTool("rect")}
