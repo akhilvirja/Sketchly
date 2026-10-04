@@ -1,13 +1,25 @@
 import { ReactNode } from "react";
 
 export default function IconButton({
-    icon, onClick, activated
+  icon,
+  onClick,
+  activated,
 }: {
-    icon: ReactNode,
-    onClick: () => void,
-    activated: boolean
+  icon: ReactNode;
+  onClick: () => void;
+  activated: boolean;
 }) {
-    return <div className={`m-2 pointer rounded-full border p-2 bg-black hover:bg-gray ${activated ? "text-red-400" : "text-white"}`} onClick={onClick}>
-        {icon}
-    </div>
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`p-2 rounded transition-colors cursor-pointer flex items-center justify-center ${
+        activated
+          ? "bg-white text-black"
+          : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+      }`}
+    >
+      {icon}
+    </button>
+  );
 }

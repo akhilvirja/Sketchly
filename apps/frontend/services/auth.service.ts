@@ -50,12 +50,29 @@ export const authService = {
   signup: async (payload: SignupPayload): Promise<SignupResponse> => {
     const response = await axiosInstance.post<SignupResponse>("/auth/signup", payload);
 
-    if (response.data.token) {
-      setToken(response.data.token);
+    if (response.data.success) {
+      if (response.data.token) {
+        setToken(response.data.token);
+      } else {
+        // Automatically authenticate on successful signup
+        try {
+          const signinRes = await axiosInstance.post<SigninResponse>("/auth/signin", {
+            email: payload.email,
+            password: payload.password,
+          });
+          if (signinRes.data.token) {
+            setToken(signinRes.data.token);
+            response.data.token = signinRes.data.token;
+          }
+        } catch {
+          // Fallback if auto-signin fails
+        }
+      }
     }
 
     return response.data;
   },
+
 
   /**
    * Authenticate an existing user and save the returned token into localStorage.

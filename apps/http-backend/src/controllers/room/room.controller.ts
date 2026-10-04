@@ -55,42 +55,85 @@ export const createRoom = async (req: Request, res: Response) =>{
     }
 }
 
-export const roomDetailsBySlug = async (req: Request, res: Response) => {
+export const getUserRooms = async (req: Request, res: Response) => {
     try {
-        const slug = req.params.slug as string
+        const userId = req.user?.id;
 
-        if(!slug){
-            return res.status(400).json({
+        if (!userId) {
+            return res.status(401).json({
                 success: false,
-                message: "Please provide a valid slug",
-            })
+                message: "Unauthorized",
+            });
         }
 
-        const room = await prisma.room.findFirst({
+        const rooms = await prisma.room.findMany({
             where: {
-                slug,
-            }
-        })
+                adminId: userId,
+            },
+            orderBy: {
+                createdAt: "desc",
+            },
+        });
 
-        if(!room){
+        return res.status(200).json({
+            success: true,
+            data: {
+                rooms,
+            },
+        });
+    } catch (error) {
+        console.log("Error in getUserRooms controller", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+        });
+    }
+};
+
+export const roomDetailsBySlug = async (req: Request, res: Response) => {
+    try {
+        const slug = req.params.slug as string;
+
+        if (!slug) {
+            return res.status(400).json({
+                success: false,
+                message: "Please provide a valid slug or room ID",
+            });
+        }
+
+        const numericId = Number(slug);
+        const room = await prisma.room.findFirst({
+            where: !isNaN(numericId)
+                ? {
+                    OR: [
+                        { id: numericId },
+                        { slug },
+                    ],
+                }
+                : {
+                    slug,
+                },
+        });
+
+        if (!room) {
             return res.status(404).json({
                 success: false,
-                message: "Room not found"
-            })
+                message: "Room not found",
+            });
         }
 
         return res.status(200).json({
             success: true,
             message: "Room fetched successfully",
             data: {
-                room
-            }
-        })
+                room,
+            },
+        });
     } catch (error) {
-        console.log("Error in roomDetailsBySlug controller", error)
+        console.log("Error in roomDetailsBySlug controller", error);
         res.status(500).json({
             success: false,
-            message: "Internal Server Error"
-        })
+            message: "Internal Server Error",
+        });
     }
-}
+};
