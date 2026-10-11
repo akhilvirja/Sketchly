@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#e2e2e6","surface-container-high":"#282a2d","tertiary":"#ffffff","inverse-on-surface":"#2f3034","on-error-container":"#ffdad6","on-surface-variant":"#c4c9ac","surface-variant":"#333538","surface":"#111317","inverse-surface":"#e2e2e6","on-tertiary-fixed-variant":"#374956","surface-tint":"#abd600","secondary-fixed-dim":"#c2c6d2","on-secondary":"#2c313a","error":"#ffb4ab","primary-fixed-dim":"#abd600","on-primary-fixed":"#161e00","tertiary-fixed-dim":"#b6c9d8","surface-dim":"#111317","outline-variant":"#444933","surface-container":"#1e2023","on-surface":"#e2e2e6","on-secondary-fixed":"#171c24","primary":"#ffffff","on-secondary-fixed-variant":"#424751","surface-container-lowest":"#0c0e11","primary-fixed":"#c3f400","surface-container-low":"#1a1c1f","on-error":"#690005","on-primary-container":"#556d00","outline":"#8e9379","background":"#111317","on-tertiary-container":"#556774","surface-container-highest":"#333538","secondary-container":"#424751","on-tertiary":"#21323e","surface-bright":"#37393d","on-secondary-container":"#b1b5c1","on-primary":"#283500","secondary-fixed":"#dee2ee","error-container":"#93000a","primary-container":"#c3f400","on-primary-fixed-variant":"#3c4d00","secondary":"#c2c6d2","inverse-primary":"#506600","tertiary-fixed":"#d2e5f5","tertiary-container":"#d2e5f5","on-tertiary-fixed":"#0b1d29"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter-mobile":"0.5rem","margin":"1.5rem","gutter":"1rem"},fontFamily:{"body-sm":["Space Mono"],"display-lg":["Space Grotesk"],"telemetry-metric":["Space Mono"],"headline-md":["Space Grotesk"],"label-md":["Space Mono"],"label-sm":["Space Mono"],"headline-lg-mobile":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"body-md":["Space Mono"],"headline-lg":["Space Grotesk"],"body-lg":["Space Mono"],"headline-sm":["Space Grotesk"]},fontSize:{"body-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"telemetry-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-low/95 backdrop-blur-md"><div class="h-14 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="dashboard" href="#"><div class="w-3 h-3 bg-primary-container"></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary uppercase">SKETCHLY</span></a><div class="hidden md:flex items-center gap-space-sm font-label-sm text-label-sm uppercase"><span class="text-outline">SYS:</span><span class="text-on-surface">LOC_01</span><span class="text-outline">//</span><span class="text-primary-container flex items-center gap-1"><span class="w-1.5 h-1.5 bg-primary-container inline-block"></span>ONLINE_TELEMETRY</span></div></div><nav class="hidden md:flex items-center gap-space-lg font-label-md text-label-md uppercase" data-active-classes="text-primary-container"><a aria-current="page" class="transition-colors text-primary-container" data-path="dashboard" href="#">Studio</a><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="room" href="#">Canvas Live</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-block font-label-sm text-label-sm text-outline hover:text-on-surface uppercase transition-colors" data-path="signin" href="#">Exit Node</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 flex-1 bg-surface-container-lowest"><div class="flex flex-col w-full">
+<!-- Command Strip / Upper Telemetry Bar -->
+<div class="w-full bg-surface-container-low px-margin py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-wider text-outline">
+<span class="text-on-surface-variant">WORKSPACE</span>
+<span>/</span>
+<span class="text-primary-container font-bold">TELEMETRY &amp; CANVASES</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 px-2 py-0.5 bg-surface-container font-label-sm text-label-sm text-primary-container">
+<span class="w-1.5 h-1.5 bg-primary-container animate-pulse"></span>
+<span>ENGINE ONLINE</span>
+</div>
+</div>
+<!-- User & Node Capsule -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span>LOC:</span>
+<span class="text-on-surface">FRA-02</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-space-sm py-1">
+<div class="w-5 h-5 bg-surface-bright flex items-center justify-center font-label-sm text-label-sm text-primary font-bold">
+          ER
+        </div>
+<span class="font-label-sm text-label-sm text-on-surface">Elena Rostova</span>
+<span class="bg-primary-container text-on-primary-container px-1 py-0.2 font-label-sm text-[9px] uppercase font-bold">
+          PRO
+        </span>
+</div>
+</div>
+</div>
+<div class="w-full px-margin py-space-lg flex flex-col gap-space-lg">
+<!-- Welcome & Real-Time Stats Block -->
+<div class="bg-surface-container p-space-md flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 bg-surface-container-high text-primary-container font-label-sm text-label-sm uppercase tracking-widest font-bold">
+            STUDIO DASHBOARD
+          </span>
+<span class="font-body-sm text-body-sm text-outline font-mono">SYS_UPTIME: 142.8H</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+          Welcome back, Elena
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+          All canvas engines operational. Zero thread contention reported across edge websocket nodes. Active synchronizers primed for low-overhead collaboration.
+        </p>
+</div>
+<!-- Telemetry Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-surface-container-lowest p-2">
+<div class="bg-surface-container-low p-space-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Active Canvases</span>
+<span class="font-telemetry-metric text-telemetry-metric text-primary mt-1">04</span>
+<span class="font-label-sm text-label-sm text-primary-container mt-1">● ALL NORMAL</span>
+</div>
+<div class="bg-surface-container-low p-space-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Team Peers</span>
+<span class="font-telemetry-metric text-telemetry-metric text-primary mt-1">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">IN 3 CHANNELS</span>
+</div>
+<div class="bg-surface-container-low p-space-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Edge Latency</span>
+<span class="font-telemetry-metric text-telemetry-metric text-primary-container mt-1">14.2<span class="font-body-sm text-body-sm font-normal text-outline">ms</span></span>
+<span class="font-label-sm text-label-sm text-outline mt-1">0% PACKET DROP</span>
+</div>
+<div class="bg-surface-container-low p-space-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Shared Heap</span>
+<span class="font-telemetry-metric text-telemetry-metric text-primary mt-1">3.8<span class="font-body-sm text-body-sm font-normal text-outline">GB</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">CAP: 16.0 GB</span>
+</div>
+</div>
+</div>
+<!-- Action Hub / Asymmetric Split Row -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Create New Canvas Box (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container p-space-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">add_box</span>
+<span class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-wider">Initialize Canvas Instance</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase">TYPE: CRDT_GRAPH</span>
+</div>
+<!-- Monospace Slug Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<label class="text-on-surface-variant uppercase" for="canvas-slug-input">CANVAS IDENTIFIER / SLUG</label>
+<span class="text-primary-container font-mono" id="slug-counter">24/32</span>
+</div>
+<div class="flex items-center bg-surface-container-lowest px-space-sm py-2">
+<span class="font-body-md text-body-md text-outline select-none">slug/ </span>
+<input class="bg-transparent font-body-md text-body-md text-primary focus:outline-none flex-1 tracking-wide" id="canvas-slug-input" maxlength="32" placeholder="canvas-identifier-tag" type="text" value="distributed-cache-v2"/>
+<span class="w-2 h-4 bg-primary-container animate-pulse"></span>
+</div>
+</div>
+<!-- Tag Pills -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase">PRESET TAXONOMY</span>
+<div class="flex flex-wrap gap-1.5" id="tag-pills">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container-high text-primary-container font-label-sm text-label-sm transition-colors" type="button">#team-sprint</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">#ui-wireframes</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container-high text-primary-container font-label-sm text-label-sm transition-colors" type="button">#system-design</button>
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">#kernel-flow</button>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-outline">
+<span class="w-1.5 h-1.5 bg-primary-container"></span>
+<span>ENCRYPTED SHARD</span>
+</div>
+<button class="bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md uppercase px-space-md py-2.5 font-bold flex items-center gap-2 transition-colors" type="button">
+<span>Launch Canvas</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</button>
+</div>
+</div>
+<!-- Join Session Box (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container p-space-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">login</span>
+<span class="font-label-md text-label-md uppercase text-on-surface font-bold tracking-wider">Join Active Session</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary-container bg-surface-container-lowest px-2 py-0.5">
+<span class="w-1.5 h-1.5 bg-primary-container"></span>
+<span>SYNC OK</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="room-code-input">ROOM PIN / PROTOCOL TOKEN</label>
+<div class="flex items-center bg-surface-container-lowest px-space-sm py-2">
+<span class="font-body-md text-body-md text-primary-container font-bold select-none pr-2">#</span>
+<input class="bg-transparent font-body-md text-body-md text-primary focus:outline-none flex-1 tracking-widest font-mono uppercase" id="room-code-input" maxlength="12" placeholder="ROOM-ID" type="text" value="409"/>
+<span class="px-1.5 py-0.5 bg-surface-container text-outline font-label-sm text-label-sm">HW-KEY</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">Requires verified Ed25519 cluster key credentials.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-end">
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md uppercase px-space-md py-2.5 font-bold flex items-center justify-center gap-2 transition-colors" type="button">
+<span>Enter Session</span>
+<span class="material-symbols-outlined text-[16px]">trending_flat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Canvas Matrix Section -->
+<div class="flex flex-col gap-space-md mt-space-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pb-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight">Active Workspaces</span>
+<span class="px-1.5 py-0.5 bg-surface-container text-outline font-label-sm text-label-sm font-mono">04 INSTANCES</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2 py-1 bg-surface-container text-primary-container font-label-sm text-label-sm uppercase" type="button">Grid View</button>
+<button class="px-2 py-1 bg-surface-container text-outline hover:text-on-surface font-label-sm text-label-sm uppercase" type="button">Raw Logs</button>
+</div>
+</div>
+<!-- 4 High-Tech Architecture Canvas Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- CARD 1 (ID #12 - LIVE) -->
+<div class="bg-surface-container flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="text-outline">ID</span>
+<span class="text-on-surface font-bold">#12</span>
+</div>
+<div class="flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-lowest text-primary-container font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 bg-primary-container animate-ping"></span>
+<span>LIVE</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary line-clamp-1">Multi-tier Cluster Topology</h2>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">UPDATED 40S AGO // BY E. ROSTOVA</span>
+</div>
+<!-- Wireframe Diagram Preview SVG -->
+<div class="w-full h-32 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full text-primary-container" fill="none" stroke="currentColor" viewbox="0 0 200 100">
+<!-- Cluster Topo Nodes -->
+<rect fill="#1e2023" height="20" stroke="currentColor" stroke-width="1.5" width="40" x="80" y="10"></rect>
+<text fill="#c3f400" font-family="Space Mono" font-size="7" text-anchor="middle" x="100" y="24">INGRESS</text>
+<path d="M 100 30 L 100 45 M 100 45 L 45 55 M 100 45 L 155 55" stroke="#8e9379" stroke-dasharray="2 2" stroke-width="1.2"></path>
+<rect fill="#1e2023" height="20" stroke="#e2e2e6" stroke-width="1.2" width="40" x="25" y="55"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="7" text-anchor="middle" x="45" y="68">NODE_01</text>
+<rect fill="#1e2023" height="20" stroke="#e2e2e6" stroke-width="1.2" width="40" x="135" y="55"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="7" text-anchor="middle" x="155" y="68">NODE_02</text>
+<path d="M 45 75 L 100 88 M 155 75 L 100 88" stroke="#8e9379" stroke-width="1.2"></path>
+<circle cx="100" cy="88" fill="#c3f400" r="4"></circle>
+</svg>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary-container">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+<span>3 PEERS EDITING</span>
+</div>
+<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container uppercase font-bold flex items-center gap-1" href="#">
+              OPEN <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- CARD 2 (ID #08) -->
+<div class="bg-surface-container flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="text-outline">ID</span>
+<span class="text-on-surface font-bold">#08</span>
+</div>
+<div class="flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-lowest text-outline font-label-sm text-label-sm">
+<span>STABLE</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary line-clamp-1">App Shell V2 Responsive</h2>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">UPDATED 14M AGO // BY A. CHEN</span>
+</div>
+<!-- Mobile Wireframe Graphic Preview SVG -->
+<div class="w-full h-32 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full text-outline" fill="none" stroke="currentColor" viewbox="0 0 200 100">
+<!-- Mobile Mockup Outlines -->
+<rect fill="#111317" height="88" stroke="#c3f400" stroke-width="1.2" width="50" x="75" y="6"></rect>
+<rect fill="#1e2023" height="6" stroke="#8e9379" stroke-width="0.8" width="40" x="80" y="12"></rect>
+<line stroke="#e2e2e6" stroke-width="1.5" x1="80" x2="110" y1="26" y2="26"></line>
+<rect fill="#1e2023" height="24" stroke="#8e9379" stroke-width="0.8" width="40" x="80" y="34"></rect>
+<line stroke="#8e9379" stroke-width="1" x1="80" x2="120" y1="65" y2="65"></line>
+<line stroke="#8e9379" stroke-width="1" x1="80" x2="105" y1="71" y2="71"></line>
+<rect fill="#c3f400" fill-opacity="0.1" height="8" stroke="#c3f400" stroke-width="1" width="40" x="80" y="80"></rect>
+</svg>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">account_circle</span>
+<span>Alex &amp; 2 others</span>
+</div>
+<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container uppercase font-bold flex items-center gap-1" href="#">
+              OPEN <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- CARD 3 (ID #04) -->
+<div class="bg-surface-container flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="text-outline">ID</span>
+<span class="text-on-surface font-bold">#04</span>
+</div>
+<div class="flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-lowest text-outline font-label-sm text-label-sm">
+<span>LOCKED</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary line-clamp-1">Stripe Sync Engine State</h2>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">UPDATED 1H AGO // AUTO-SNAPSHOT</span>
+</div>
+<!-- State Machine Preview SVG -->
+<div class="w-full h-32 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full" fill="none" viewbox="0 0 200 100">
+<!-- State Machine Nodes -->
+<rect fill="#1e2023" height="24" stroke="#8e9379" stroke-width="1.2" width="42" x="15" y="38"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="7" text-anchor="middle" x="36" y="53">INIT</text>
+<path d="M 57 50 L 78 50" stroke="#c3f400" stroke-width="1.2"></path>
+<polygon fill="#c3f400" points="78,48 83,50 78,52"></polygon>
+<rect fill="#1e2023" height="24" stroke="#c3f400" stroke-width="1.5" width="42" x="83" y="38"></rect>
+<text fill="#c3f400" font-family="Space Mono" font-size="7" text-anchor="middle" x="104" y="53">AUTH</text>
+<path d="M 125 50 L 146 50" stroke="#8e9379" stroke-width="1.2"></path>
+<polygon fill="#8e9379" points="146,48 151,50 146,52"></polygon>
+<rect fill="#1e2023" height="24" stroke="#8e9379" stroke-width="1.2" width="38" x="151" y="38"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="7" text-anchor="middle" x="170" y="53">SETL</text>
+<!-- Feedback Loop -->
+<path d="M 104 38 L 104 22 L 36 22 L 36 38" stroke="#ffb4ab" stroke-dasharray="2 2" stroke-width="1"></path>
+<text fill="#ffb4ab" font-family="Space Mono" font-size="6" x="70" y="18">RETRY (BACKOFF)</text>
+</svg>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Encrypted Vault</span>
+</div>
+<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container uppercase font-bold flex items-center gap-1" href="#">
+              OPEN <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- CARD 4 (ID #01) -->
+<div class="bg-surface-container flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="text-outline">ID</span>
+<span class="text-on-surface font-bold">#01</span>
+</div>
+<div class="flex items-center gap-1 px-1.5 py-0.5 bg-surface-container-lowest text-outline font-label-sm text-label-sm">
+<span>STANDBY</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary line-clamp-1">OAuth2 &amp; Passkey Microservice</h2>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">UPDATED 6H AGO // BY K. VOGEL</span>
+</div>
+<!-- Tree Architecture Preview SVG -->
+<div class="w-full h-32 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full" fill="none" viewbox="0 0 200 100">
+<!-- Central Root -->
+<circle cx="35" cy="50" fill="#1e2023" r="14" stroke="#c3f400" stroke-width="1.2"></circle>
+<text fill="#c3f400" font-family="Space Mono" font-size="7" text-anchor="middle" x="35" y="53">AUTH</text>
+<path d="M 49 50 L 95 25 M 49 50 L 95 50 M 49 50 L 95 75" stroke="#8e9379" stroke-width="1.2"></path>
+<!-- Sub-services -->
+<rect fill="#1e2023" height="18" stroke="#8e9379" stroke-width="1" width="65" x="95" y="16"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="6.5" text-anchor="middle" x="127" y="28">WEBAUTHN</text>
+<rect fill="#1e2023" height="18" stroke="#8e9379" stroke-width="1" width="65" x="95" y="41"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="6.5" text-anchor="middle" x="127" y="53">JWT_SIGNER</text>
+<rect fill="#1e2023" height="18" stroke="#8e9379" stroke-width="1" width="65" x="95" y="66"></rect>
+<text fill="#e2e2e6" font-family="Space Mono" font-size="6.5" text-anchor="middle" x="127" y="78">KEY_ROTATOR</text>
+</svg>
+</div>
+</div>
+<div class="bg-surface-container-low px-space-md py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">history</span>
+<span>Archived Graph</span>
+</div>
+<a class="font-label-sm text-label-sm text-on-surface hover:text-primary-container uppercase font-bold flex items-center gap-1" href="#">
+              OPEN <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Cluster Diagnostics Stream / Technical Log Preview -->
+<div class="bg-surface-container p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[16px]">terminal</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface font-bold">EDGE DAEMON TELEMETRY STREAM</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container">POLLING AT 1000MS</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm font-mono text-[11px] leading-5 text-on-surface-variant overflow-x-auto space-y-1">
+<div class="flex items-center gap-space-md">
+<span class="text-outline">14:02:19.412</span>
+<span class="text-primary-container font-bold">[WS_PEER_SYNC]</span>
+<span>Room #409 broadcast vector clock sync -&gt; 12 clients ack (0.8ms)</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="text-outline">14:02:18.891</span>
+<span class="text-on-surface">[CRDT_STATE]</span>
+<span>Canvas #12 received 18 delta mutations from Node ER_ROSTOVA</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="text-outline">14:02:16.004</span>
+<span class="text-outline">[HEAP_COLLECT]</span>
+<span>Global garbage collector swept 14.1 MB unreferenced stroke geometry</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Technical Telemetry Strip -->
+<div class="w-full bg-surface-container-low px-margin py-2.5 flex flex-wrap items-center justify-between gap-space-md font-label-sm text-label-sm text-outline uppercase">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-primary-container"></span>
+<span class="text-on-surface">LATENCY:</span>
+<span class="text-primary-container">&lt;18MS</span>
+</div>
+<span class="hidden sm:inline text-outline">//</span>
+<div class="hidden sm:flex items-center gap-1.5">
+<span>SOCKET:</span>
+<span class="text-on-surface">RFC 6455 TLS</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span>RENDERER:</span>
+<span class="text-on-surface">120 FPS FIXED</span>
+</div>
+<span class="text-outline">//</span>
+<div class="flex items-center gap-1.5">
+<span>KERNEL:</span>
+<span class="text-primary-container">V1.0.4-STABLE</span>
+</div>
+</div>
+</div>
+<!-- Interactive Logic -->
+<script>
+    (function initDashboard() {
+      const slugInput = document.getElementById('canvas-slug-input');
+      const slugCounter = document.getElementById('slug-counter');
+      const tagButtons = document.querySelectorAll('#tag-pills button');
+
+      if (slugInput && slugCounter) {
+        slugInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+          e.target.value = val;
+          slugCounter.textContent = `${val.length}/32`;
+        });
+      }
+
+      tagButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (slugInput) {
+            const rawTag = btn.textContent.replace('#', '').trim();
+            slugInput.value = rawTag + '-' + Math.floor(100 + Math.random() * 900);
+            if (slugCounter) {
+              slugCounter.textContent = `${slugInput.value.length}/32`;
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-auto"><div class="w-full px-margin py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline uppercase"><div>SKETCHLY KERNEL V4.18 // VOLTAGE TERMINAL PIPELINE</div><div class="flex items-center gap-space-lg"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-primary-container"></span>CLUSTER ACTIVE</span><span>LATENCY: 12MS</span><span>© 2025 SKETCHLY ARCHITECTURE</span></div></div></footer></body></html>

@@ -82,9 +82,22 @@ export class Game {
 
     clearCanvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.fillStyle = "rgba(0, 0, 0)";
+        this.ctx.fillStyle = "#0c0e11";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.strokeStyle = "rgba(255, 255, 255)";
+
+        // Render Voltage Terminal precision 28px dot matrix grid
+        this.ctx.fillStyle = "rgba(255, 255, 255, 0.08)";
+        const gridSize = 28;
+        for (let x = gridSize; x < this.canvas.width; x += gridSize) {
+            for (let y = gridSize; y < this.canvas.height; y += gridSize) {
+                this.ctx.fillRect(x, y, 1.25, 1.25);
+            }
+        }
+
+        this.ctx.strokeStyle = "#fafafa";
+        this.ctx.lineWidth = 1.5;
+        this.ctx.lineCap = "round";
+        this.ctx.lineJoin = "round";
 
         this.existingShapes.forEach((shape: Shape) => {
             if (shape.type === "rect") {
@@ -101,16 +114,17 @@ export class Game {
                 this.ctx.stroke();
                 this.ctx.closePath();
             }
-        })
+        });
     }
 
     mouseDownHandler = (e: MouseEvent) => {
-        this.clicked = true
-        this.startX = e.clientX
-        this.startY = e.clientY
-    }
+        this.clicked = true;
+        this.startX = e.clientX;
+        this.startY = e.clientY;
+    };
+
     mouseUpHandler = (e: MouseEvent) => {
-        this.clicked = false
+        this.clicked = false;
         const width = e.clientX - this.startX;
         const height = e.clientY - this.startY;
 
@@ -122,8 +136,8 @@ export class Game {
                 x: this.startX,
                 y: this.startY,
                 height,
-                width
-            }
+                width,
+            };
         } else if (selectedTool === "circle") {
             const radius = Math.hypot(e.clientX - this.startX, e.clientY - this.startY);
             shape = {
@@ -131,15 +145,15 @@ export class Game {
                 radius: radius,
                 centerX: this.startX,
                 centerY: this.startY,
-            }
+            };
         } else if (selectedTool === "line") {
             shape = {
                 type: "line",
                 startX: this.startX,
                 startY: this.startY,
                 endX: e.clientX,
-                endY: e.clientY
-            }
+                endY: e.clientY,
+            };
         }
 
         if (!shape) {
@@ -148,30 +162,39 @@ export class Game {
 
         this.existingShapes.push(shape);
 
-        this.socket.send(JSON.stringify({
-            type: "chat",
-            message: JSON.stringify({
-                shape
-            }),
-            roomId: this.roomId
-        }))
-    }
+        this.socket.send(
+            JSON.stringify({
+                type: "chat",
+                message: JSON.stringify({
+                    shape,
+                }),
+                roomId: this.roomId,
+            })
+        );
+    };
+
     mouseMoveHandler = (e: MouseEvent) => {
         if (this.clicked) {
             const width = e.clientX - this.startX;
             const height = e.clientY - this.startY;
             this.clearCanvas();
-            this.ctx.strokeStyle = "rgba(255, 255, 255)"
+
+            // Active preview drafting stroke: High-voltage Acid Lime
+            this.ctx.strokeStyle = "#ccff00";
+            this.ctx.lineWidth = 1.75;
+            this.ctx.lineCap = "round";
+            this.ctx.lineJoin = "round";
+
             const selectedTool = this.selectedTool;
 
             if (selectedTool === "rect") {
-                this.ctx.strokeRect(this.startX, this.startY, width, height);   
+                this.ctx.strokeRect(this.startX, this.startY, width, height);
             } else if (selectedTool === "circle") {
                 const radius = Math.hypot(e.clientX - this.startX, e.clientY - this.startY);
                 this.ctx.beginPath();
                 this.ctx.arc(this.startX, this.startY, radius, 0, Math.PI * 2);
                 this.ctx.stroke();
-                this.ctx.closePath();                
+                this.ctx.closePath();
             } else if (selectedTool === "line") {
                 this.ctx.beginPath();
                 this.ctx.moveTo(this.startX, this.startY);
@@ -180,7 +203,7 @@ export class Game {
                 this.ctx.closePath();
             }
         }
-    }
+    };
 
     initMouseHandlers() {
         this.canvas.addEventListener("mousedown", this.mouseDownHandler)

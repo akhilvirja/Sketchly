@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-background":"#e2e2e6","surface-container-high":"#282a2d","tertiary":"#ffffff","inverse-on-surface":"#2f3034","on-error-container":"#ffdad6","on-surface-variant":"#c4c9ac","surface-variant":"#333538","surface":"#111317","inverse-surface":"#e2e2e6","on-tertiary-fixed-variant":"#374956","surface-tint":"#abd600","secondary-fixed-dim":"#c2c6d2","on-secondary":"#2c313a","error":"#ffb4ab","primary-fixed-dim":"#abd600","on-primary-fixed":"#161e00","tertiary-fixed-dim":"#b6c9d8","surface-dim":"#111317","outline-variant":"#444933","surface-container":"#1e2023","on-surface":"#e2e2e6","on-secondary-fixed":"#171c24","primary":"#ffffff","on-secondary-fixed-variant":"#424751","surface-container-lowest":"#0c0e11","primary-fixed":"#c3f400","surface-container-low":"#1a1c1f","on-error":"#690005","on-primary-container":"#556d00","outline":"#8e9379","background":"#111317","on-tertiary-container":"#556774","surface-container-highest":"#333538","secondary-container":"#424751","on-tertiary":"#21323e","surface-bright":"#37393d","on-secondary-container":"#b1b5c1","on-primary":"#283500","secondary-fixed":"#dee2ee","error-container":"#93000a","primary-container":"#c3f400","on-primary-fixed-variant":"#3c4d00","secondary":"#c2c6d2","inverse-primary":"#506600","tertiary-fixed":"#d2e5f5","tertiary-container":"#d2e5f5","on-tertiary-fixed":"#0b1d29"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-sm":"0.5rem","gutter-mobile":"0.5rem","margin":"1.5rem","gutter":"1rem"},fontFamily:{"body-sm":["Space Mono"],"display-lg":["Space Grotesk"],"telemetry-metric":["Space Mono"],"headline-md":["Space Grotesk"],"label-md":["Space Mono"],"label-sm":["Space Mono"],"headline-lg-mobile":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"body-md":["Space Mono"],"headline-lg":["Space Grotesk"],"body-lg":["Space Mono"],"headline-sm":["Space Grotesk"]},fontSize:{"body-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"telemetry-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["15px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface-container-lowest text-on-surface font-body-md text-body-md antialiased min-h-screen"><main class="w-full min-h-screen bg-surface-container-lowest"><div class="flex flex-col w-full relative select-none overflow-hidden bg-surface-container-lowest text-on-surface font-body-md" style="height: 100vh;">
+<!-- Dot Matrix Drafting Canvas Area -->
+<div class="absolute inset-0 w-full h-full cursor-crosshair overflow-hidden" id="canvas-surface" style="background-color: #0c0e11; background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px); background-size: 28px 28px;">
+<!-- Coordinate Grid Scale Identifiers -->
+<div class="absolute top-3 left-4 pointer-events-none flex items-center space-x-3 text-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="text-on-surface-variant">CANVAS://ROOM_12_DISTRIBUTED_V2</span>
+<span>|</span>
+<span>X: 1024.00 Y: 768.00</span>
+<span>|</span>
+<span class="text-primary-fixed">GRID: 28PX SYNCHRONIZED</span>
+</div>
+<!-- Architectural Vector Diagram Layer -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0">
+<defs>
+<!-- Orthogonal & Signal Connectors -->
+<marker id="arrow" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#c3f400"></path>
+</marker>
+<marker id="arrow-dim" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#444933"></path>
+</marker>
+</defs>
+<!-- Path: Gateway -> L1 Cache -->
+<path d="M 390 320 L 520 320" fill="none" stroke="#c3f400" stroke-dasharray="4 2" stroke-width="2"></path>
+<!-- Path: Gateway -> Persist Bay -->
+<path d="M 285 410 L 285 530" fill="none" stroke="#444933" stroke-width="1.5"></path>
+<!-- Path: L1 Cache -> Async Ingest -->
+<path d="M 720 320 L 830 320" fill="none" marker-end="url(#arrow)" stroke="#c3f400" stroke-width="2"></path>
+<!-- Path: Async Ingest -> Persist Bay -->
+<path d="M 980 430 L 980 590 L 450 590" fill="none" stroke="#c3f400" stroke-dasharray="6 3" stroke-width="1.5"></path>
+</svg>
+<!-- Node 1: Gateway 01 / Edge Proxy -->
+<div class="absolute z-10 w-72 bg-surface-container-low shadow-2xl transition-all" style="top: 240px; left: 120px; box-shadow: 6px 6px 0px 0px #0c0e11;">
+<div class="bg-surface-container px-3 py-1.5 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-1.5 bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-bold">EDGE_INGRESS_01</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PORT: 443</span>
+</div>
+<div class="p-3.5 space-y-2">
+<div class="flex items-baseline justify-between">
+<div class="font-headline-sm text-headline-sm text-tertiary">GATEWAY 01</div>
+<span class="bg-surface-container-high px-1.5 py-0.5 text-primary-fixed font-label-sm text-label-sm font-bold">ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Envoy Proxy • 10.0.4.12</p>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-secondary-fixed-dim">
+<span class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-xs text-primary-fixed">bolt</span>
+<span>LATENCY: &lt;1.8ms</span>
+</span>
+<span class="text-on-surface-variant">REQ: 84.2K/S</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>TLS 1.3 ALPN: H2</span>
+<span>ZONE: US-EAST-1A</span>
+</div>
+</div>
+<!-- Node 2: L1 CACHE / Redis Cluster -->
+<div class="absolute z-10 w-72 bg-surface-container-low shadow-2xl" style="top: 240px; left: 520px; box-shadow: 6px 6px 0px 0px #0c0e11;">
+<div class="bg-surface-container px-3 py-1.5 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-1.5 bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-bold">IN-MEM DISTRIBUTED</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SHARDS: 08</span>
+</div>
+<div class="p-3.5 space-y-2">
+<div class="flex items-baseline justify-between">
+<div class="font-headline-sm text-headline-sm text-tertiary">L1 CACHE</div>
+<span class="bg-surface-container-high px-1.5 py-0.5 text-primary-fixed font-label-sm text-label-sm font-bold">98.4% HIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Redis v7.2 Cluster • 10.0.12.80</p>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-secondary-fixed-dim">
+<span class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-xs text-primary-fixed">memory</span>
+<span>RAM: 38.4 / 64GB</span>
+</span>
+<span class="text-on-surface-variant">KEYS: 12.4M</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>EVICT: ALLKEYS-LRU</span>
+<span>PERSIST: RDB/AOF</span>
+</div>
+</div>
+<!-- Node 3: PERSIST BAY / Postgres Master -->
+<div class="absolute z-10 w-72 bg-surface-container-low shadow-2xl" style="top: 530px; left: 160px; box-shadow: 6px 6px 0px 0px #0c0e11;">
+<div class="bg-surface-container px-3 py-1.5 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-bold">STORAGE_TIER_PRIMARY</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">REPL: SYNC</span>
+</div>
+<div class="p-3.5 space-y-2">
+<div class="flex items-baseline justify-between">
+<div class="font-headline-sm text-headline-sm text-tertiary">PERSIST BAY</div>
+<span class="bg-surface-container px-1.5 py-0.5 text-secondary-fixed-dim font-label-sm text-label-sm">PRIMARY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">PostgreSQL 16 Enterprise • SSD-NVME</p>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-secondary-fixed-dim">
+<span class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-xs text-on-surface-variant">database</span>
+<span>IOPS: 18.2K</span>
+</span>
+<span class="text-primary-fixed font-bold">WAL: STREAMING</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-3 py-1 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>POOL: PGBOUNCER (MAX 400)</span>
+<span>VOL: 2.4TB</span>
+</div>
+</div>
+<!-- ACTIVE DRAFTED NODE (Selected State with Acid Lime Bounding Box & Anchors) -->
+<div class="absolute z-20 w-80 bg-surface-container-high transition-transform select-none" style="top: 230px; left: 830px; outline: 2px solid #c3f400; box-shadow: 8px 8px 0px 0px #0c0e11;">
+<!-- Corner Anchor Handles -->
+<span class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-primary-container z-30"></span>
+<span class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-primary-container z-30"></span>
+<span class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-primary-container z-30"></span>
+<span class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-primary-container z-30"></span>
+<!-- Telemetry Dimension Tag -->
+<div class="absolute -top-7 right-0 bg-primary-container text-on-primary-fixed px-2 py-0.5 font-label-sm text-label-sm font-bold tracking-wider uppercase flex items-center space-x-1 shadow">
+<span class="material-symbols-outlined text-xs">straighten</span>
+<span>W: 320PX   H: 180PX</span>
+</div>
+<!-- Card Internal Header -->
+<div class="bg-surface-bright px-3.5 py-1.5 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 bg-primary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase font-bold tracking-wider">DRAFT_PROPOSAL</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold uppercase">SELECTION [ACTIVE]</span>
+</div>
+<!-- Node Body -->
+<div class="p-4 space-y-3">
+<div class="flex items-baseline justify-between">
+<div class="font-headline-sm text-headline-sm text-tertiary">ASYNC INGEST BUFFER</div>
+<span class="bg-surface px-1.5 py-0.5 text-primary-fixed font-label-sm text-label-sm">KAFKA / REDPANDA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">Stream Pipeline • Partitioning (16)</p>
+<!-- Live Drafted Micro-metric Graph -->
+<div class="bg-surface-container-lowest p-2">
+<div class="flex justify-between items-center mb-1 font-label-sm text-label-sm text-outline">
+<span>TARGET THROUGHPUT</span>
+<span class="text-primary-fixed font-bold">250 MB/S</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-full h-8" preserveaspectratio="none" viewbox="0 0 240 32">
+<path d="M0,24 L30,22 L60,18 L90,26 L120,10 L150,15 L180,6 L210,12 L240,4" fill="none" stroke="#c3f400" stroke-width="2"></path>
+<path d="M0,24 L30,22 L60,18 L90,26 L120,10 L150,15 L180,6 L210,12 L240,4 L240,32 L0,32 Z" fill="rgba(195, 244, 0, 0.08)"></path>
+</svg>
+</div>
+</div>
+<div class="bg-surface-container-low px-3 py-1.5 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>RETENTION: 7 DAYS</span>
+<span class="text-primary-fixed font-bold">OFFSET: 948,110,240</span>
+</div>
+</div>
+<!-- LIVE TEAM CURSOR 1: Sarah (Staff Eng) -->
+<div class="absolute z-40 pointer-events-none transition-all duration-75 flex flex-col items-start" style="top: 190px; left: 340px;">
+<!-- Mint/Cyan Cursor SVG -->
+<svg class="w-5 h-5 text-tertiary-fixed-dim drop-shadow-md" fill="currentColor" viewbox="0 0 24 24">
+<path d="M3 2l18 9-9 3-3 9L3 2z"></path>
+</svg>
+<div class="bg-surface-container-high px-2 py-0.5 ml-3 -mt-1 font-label-sm text-label-sm text-tertiary-fixed-dim flex items-center space-x-1.5 shadow-lg">
+<span class="w-1.5 h-1.5 bg-tertiary-fixed-dim"></span>
+<span class="font-bold">SARAH (STAFF ENG)</span>
+<span class="text-on-surface-variant text-[9px]">INSPECTING</span>
+</div>
+</div>
+<!-- LIVE TEAM CURSOR 2: Marcus (Architect) -->
+<div class="absolute z-40 pointer-events-none transition-all duration-75 flex flex-col items-start" style="top: 410px; left: 880px;">
+<!-- Acid Lime Cursor SVG -->
+<svg class="w-5 h-5 text-primary-fixed drop-shadow-md" fill="currentColor" viewbox="0 0 24 24">
+<path d="M3 2l18 9-9 3-3 9L3 2z"></path>
+</svg>
+<div class="bg-primary-container text-on-primary-fixed px-2 py-0.5 ml-3 -mt-1 font-label-sm text-label-sm flex items-center space-x-1.5 shadow-lg font-bold">
+<span class="w-1.5 h-1.5 bg-surface-container-lowest"></span>
+<span>MARCUS (ARCHITECT)</span>
+<span class="text-[9px] uppercase tracking-tighter">DRAWING</span>
+</div>
+</div>
+</div>
+<!-- FLOATING TOP-CENTER HARDWARE DOCK -->
+<header class="absolute top-4 inset-x-0 mx-auto w-full max-w-5xl px-4 z-50 pointer-events-none">
+<div class="w-full flex items-center justify-between pointer-events-auto bg-surface-container-low shadow-2xl p-1.5" style="box-shadow: 4px 4px 0px 0px #0c0e11;">
+<!-- Dock Left: Back / Escape Action -->
+<div class="flex items-center space-x-2 pl-1">
+<button class="group bg-surface-container px-3 py-1.5 text-on-surface hover:text-primary-fixed hover:bg-surface-bright flex items-center space-x-2 transition-all" type="button">
+<span class="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-0.5">arrow_back</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">DASHBOARD</span>
+<span class="bg-surface-container-high text-on-surface-variant px-1 py-0.2 text-[9px] font-mono">ESC</span>
+</button>
+</div>
+<!-- Dock Center: Vector Tooling Selector -->
+<nav aria-label="Vector Drafting Tools" class="flex items-center bg-surface-container-lowest p-1 space-x-1">
+<!-- Pointer (V) -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Select Tool (V)" type="button">
+<span class="material-symbols-outlined text-lg">near_me</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-outline">V</span>
+</button>
+<!-- Line (L) -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Line Tool (L)" type="button">
+<span class="material-symbols-outlined text-lg">horizontal_rule</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-outline">L</span>
+</button>
+<!-- Rectangle (R) [ACTIVE IN ACID LIME] -->
+<button class="relative p-2 bg-primary-container text-on-primary-fixed font-bold flex items-center justify-center shadow" title="Rectangle Tool (R) [Active]" type="button">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">crop_square</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-on-primary-fixed font-bold">R</span>
+</button>
+<!-- Circle (C) -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Circle Tool (C)" type="button">
+<span class="material-symbols-outlined text-lg">radio_button_unchecked</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-outline">C</span>
+</button>
+<!-- Pen (P) -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Pen Tool (P)" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-outline">P</span>
+</button>
+<!-- Text (T) -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Text Tool (T)" type="button">
+<span class="material-symbols-outlined text-lg">title</span>
+<span class="absolute bottom-0 right-0.5 text-[8px] font-mono leading-none text-outline">T</span>
+</button>
+<!-- Divider -->
+<div class="h-5 w-px bg-surface-container-high mx-1"></div>
+<!-- Connector Path Tool -->
+<button class="relative p-2 text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-all flex items-center justify-center" title="Orthogonal Link Tool" type="button">
+<span class="material-symbols-outlined text-lg">conversion_path</span>
+</button>
+</nav>
+<!-- Dock Right: Collaborative Presence Room Pill -->
+<div class="flex items-center space-x-3 pr-1">
+<div class="flex items-center space-x-2 bg-surface-container-lowest px-2.5 py-1">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 bg-primary-fixed"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface tracking-wider font-mono font-bold">#12: distributed-cache-v2</span>
+</div>
+<!-- Avatars Roster -->
+<div class="flex items-center -space-x-1.5 font-label-sm text-label-sm">
+<div class="w-6 h-6 bg-tertiary-fixed-dim text-on-tertiary-fixed font-bold flex items-center justify-center uppercase shadow" title="Sarah (Staff Eng)">
+            SE
+          </div>
+<div class="w-6 h-6 bg-primary-container text-on-primary-fixed font-bold flex items-center justify-center uppercase shadow" title="Marcus (Architect)">
+            MA
+          </div>
+<div class="w-6 h-6 bg-surface-container-high text-on-surface-variant font-bold flex items-center justify-center shadow" title="2 other peers connected">
+            +2
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- BOTTOM FLOATING CONTROLS DOCK (THREE PANELS: MINIMAP / SWATCHES / TELEMETRY HUD) -->
+<footer class="absolute bottom-4 inset-x-0 px-6 z-50 pointer-events-none flex items-end justify-between">
+<!-- BOTTOM LEFT: Blueprint Minimap & Viewport Scale -->
+<div class="pointer-events-auto bg-surface-container-low shadow-xl p-2.5 space-y-2 w-56" style="box-shadow: 4px 4px 0px 0px #0c0e11;">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase">
+<span class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-xs">map</span>
+<span>MINIMAP</span>
+</span>
+<span class="text-primary-fixed font-mono font-bold">100%</span>
+</div>
+<!-- Minimap Screen Frame Representation -->
+<div class="relative w-full h-24 bg-surface-container-lowest overflow-hidden">
+<!-- Dot raster hint in minimap -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 8px 8px;"></div>
+<!-- Mock Nodes inside Minimap -->
+<div class="absolute w-6 h-4 bg-surface-container-high" style="top: 24px; left: 16px;"></div>
+<div class="absolute w-6 h-4 bg-surface-container-high" style="top: 24px; left: 44px;"></div>
+<div class="absolute w-6 h-4 bg-surface-container-high" style="top: 50px; left: 20px;"></div>
+<!-- Active Draft Node in Minimap -->
+<div class="absolute w-7 h-4 bg-primary-container" style="top: 23px; left: 74px;"></div>
+<!-- Viewport Camera Frustum Frame -->
+<div class="absolute inset-2 outline outline-1 outline-primary-fixed bg-primary-fixed/5 pointer-events-none"></div>
+</div>
+<!-- Viewport Controls -->
+<div class="flex items-center justify-between pt-1">
+<button class="bg-surface-container px-2 py-1 text-on-surface hover:text-primary-fixed font-label-sm text-label-sm uppercase flex items-center space-x-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-xs">filter_center_focus</span>
+<span>FIT VIEW [⌘0]</span>
+</button>
+<div class="flex items-center space-x-1">
+<button class="bg-surface-container p-1 text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-xs">remove</span>
+</button>
+<button class="bg-surface-container p-1 text-on-surface-variant hover:text-on-surface transition-colors" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-xs">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BOTTOM CENTER: Drafting Attributes (Swatches & Stroke Weights) -->
+<div class="pointer-events-auto bg-surface-container-low shadow-xl p-2 flex items-center space-x-4" style="box-shadow: 4px 4px 0px 0px #0c0e11;">
+<!-- Color Swatches Palette -->
+<div class="flex items-center space-x-1.5 pl-1">
+<span class="font-label-sm text-label-sm text-outline uppercase mr-1">STROKE</span>
+<!-- White Swatch -->
+<button class="w-6 h-6 bg-tertiary transition-transform hover:scale-105 relative focus:outline-none" title="White (#FFFFFF)" type="button"></button>
+<!-- Acid Lime Swatch (Selected) -->
+<button class="w-6 h-6 bg-primary-container relative outline outline-2 outline-offset-1 outline-primary-container focus:outline-none" title="Acid Lime (#CCFF00) [Selected]" type="button">
+<span class="absolute inset-1.5 bg-surface-container-lowest"></span>
+</button>
+<!-- Mint Swatch -->
+<button class="w-6 h-6 bg-tertiary-fixed transition-transform hover:scale-105 focus:outline-none" title="Mint (#D2E5F5)" type="button"></button>
+<!-- Charcoal Swatch -->
+<button class="w-6 h-6 bg-surface-container-high transition-transform hover:scale-105 focus:outline-none" title="Charcoal (#282A2D)" type="button"></button>
+</div>
+<!-- Vertical Delimiter -->
+<div class="h-6 w-px bg-surface-container-highest"></div>
+<!-- Stroke Width Selector -->
+<div class="flex items-center space-x-1 pr-1 font-mono">
+<!-- 1PX -->
+<button class="px-2 py-1 bg-surface-container text-on-surface-variant hover:text-tertiary font-label-sm text-label-sm transition-colors" type="button">
+          1PX
+        </button>
+<!-- 2PX [ACTIVE] -->
+<button class="px-2 py-1 bg-primary-container text-on-primary-fixed font-bold font-label-sm text-label-sm shadow" type="button">
+          2PX
+        </button>
+<!-- 4PX -->
+<button class="px-2 py-1 bg-surface-container text-on-surface-variant hover:text-tertiary font-label-sm text-label-sm transition-colors" type="button">
+          4PX
+        </button>
+</div>
+<!-- Vertical Delimiter -->
+<div class="h-6 w-px bg-surface-container-highest"></div>
+<!-- Orthogonal Grid Snap Toggle -->
+<button class="flex items-center space-x-1.5 bg-surface-container px-2 py-1 text-primary-fixed font-label-sm text-label-sm font-bold uppercase transition-colors hover:bg-surface-bright" type="button">
+<span class="material-symbols-outlined text-xs">grid_on</span>
+<span>SNAP: ON</span>
+</button>
+</div>
+<!-- BOTTOM RIGHT: High Precision Live Telemetry HUD -->
+<div class="pointer-events-auto bg-surface-container-low shadow-xl px-3 py-2 flex items-center space-x-3 font-mono text-label-sm font-label-sm" style="box-shadow: 4px 4px 0px 0px #0c0e11;">
+<!-- Connection Beacon -->
+<div class="flex items-center space-x-1.5">
+<span class="inline-block w-2 h-2 bg-primary-fixed"></span>
+<span class="text-tertiary font-bold tracking-wider">WS CONNECTED</span>
+</div>
+<span class="text-surface-variant">|</span>
+<!-- Ping Telemetry -->
+<div class="text-on-surface-variant">
+        PING: <span class="text-primary-fixed font-bold">12ms</span>
+</div>
+<span class="text-surface-variant">|</span>
+<!-- FPS & Memory Telemetry -->
+<div class="text-on-surface-variant">
+        RENDER: <span class="text-primary-fixed font-bold">60 FPS</span>
+</div>
+<span class="text-surface-variant">|</span>
+<div class="text-outline uppercase">
+        MEM: 24.8MB
+      </div>
+</div>
+</footer>
+<!-- CLIENT-SIDE INTERACTIVE DRAFTING SCRIPT -->
+<script>
+    (function initDraftingEngine() {
+      const canvas = document.getElementById('canvas-surface');
+      if (!canvas) return;
+
+      // Coordinate tracking for drafting display
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          console.log('[Sketchly] Escape signal received - unfocusing nodes');
+        }
+      });
+    })();
+  </script>
+</div></main></body></html>
