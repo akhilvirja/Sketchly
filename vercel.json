@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "frontend": {
+      "root": "apps/frontend",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "http-backend",
+          "format": "url",
+          "env": "HTTP_BACKEND_URL"
+        }
+      ]
+    },
+    "http-backend": {
+      "root": "apps/http-backend",
+      "framework": "express"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "http-backend"
+      }
+    },
+    {
+      "source": "/health",
+      "destination": {
+        "service": "http-backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
+}

@@ -26,3 +26,5 @@ const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`Server (HTTP + WebSocket) is Running on Port ${PORT}`);
 });
+
+export default app;

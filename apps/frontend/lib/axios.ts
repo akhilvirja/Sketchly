@@ -34,12 +34,18 @@ export const removeToken = (): void => {
 
 /**
  * Base URL resolution with API versioning support (e.g. /api/v1, /api/v2).
- * Supports NEXT_PUBLIC_BACKEND_URL or BACKEND_URL, defaulting to localhost:3001.
+ * - In Vercel server-side runtime / SSR: uses internal service binding (HTTP_BACKEND_URL).
+ * - In client-side runtime or external backends: uses NEXT_PUBLIC_BACKEND_URL, defaulting to relative same-origin /api/${version}.
  */
 export const getBaseUrl = (version: ApiVersion = "v1"): string => {
-  const backendUrl =
-    process.env.NEXT_PUBLIC_BACKEND_URL
-  return `${backendUrl}/api/${version}`;
+  // Server-side runtime (e.g. Next.js Server Components / Route Handlers) using Vercel Service Binding
+  if (typeof window === "undefined" && process.env.HTTP_BACKEND_URL) {
+    return `${process.env.HTTP_BACKEND_URL}/api/${version}`;
+  }
+
+  // Client-side in browser or when explicit public URL is provided
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "";
+  return backendUrl ? `${backendUrl}/api/${version}` : `/api/${version}`;
 };
 
 /**
